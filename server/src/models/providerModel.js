@@ -36,6 +36,7 @@ const providerSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "service",
+        required: true,
       },
     ],
     rating: {
