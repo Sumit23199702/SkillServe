@@ -14,6 +14,7 @@ const serviceSchema = new mongoose.Schema(
     price: {
       type: Number,
       required: true,
+      min: 0,
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
@@ -22,6 +23,15 @@ const serviceSchema = new mongoose.Schema(
     provider: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "provider",
+    },
+    duration: {
+      type: Number,
+      required: true,
+      min: 15,
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
     },
   },
   { timestamps: true }
