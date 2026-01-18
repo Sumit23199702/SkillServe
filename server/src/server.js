@@ -5,6 +5,7 @@ const userRoute = require("./routes/userRoute");
 const providerRoute = require("./routes/providerRoute");
 const categoryRoute = require("./routes/categoryRoute");
 const serviceRoute = require("./routes/serviceRoute");
+const bookingRoute = require("./routes/bookingRoute");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use("/", userRoute);
 app.use("/", categoryRoute);
 app.use("/", providerRoute);
 app.use("/", serviceRoute);
+app.use("/", bookingRoute);
 
 dotenv.config();
 

@@ -10,11 +10,13 @@ const bookingSchema = new mongoose.Schema(
     provider: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "provider",
+      required: true,
     },
     services: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "service",
+        required: true,
       },
     ],
     totalPrice: {
@@ -34,6 +36,11 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       enum: ["Pending", "Compeleted", "Failed"],
       default: "Pending",
+    },
+    paymentMethod: {
+      type: String,
+      enum: ["COD", "UPI", "CARD"],
+      required: true,
     },
   },
   { timestamps: true }
